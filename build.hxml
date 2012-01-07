@@ -1,0 +1,4 @@
+-lib nodejs
+-D nodejs
+-js haxenode.js
+-main Haxenode
