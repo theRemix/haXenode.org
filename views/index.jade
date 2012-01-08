@@ -1,17 +1,148 @@
-#nodevshaxe
-  article
-    header
-      h2 node.js
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.
-
-  article
-    header
-      h2 haxenode
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra. Pellentesque auctor neque quis nisl lacinia id rutrum lacus venenatis.
+#haxenodexample
+  #nodejsexample
+    article
+      header
+        h2 node.js
+        code
+          | var http = require('http');
+          | http.createServer(function (req, res) {
+          |   res.writeHead(200, {'Content-Type': 'text/plain'});
+          |   res.end('Hello World\\n');
+          | }).listen(1337, "127.0.0.1");
+          | console.log('Server running at http://127.0.0.1:1337/');
+        strong run server
+        br
+        kbd $ node example.js
+        br
+        samp Server running at http://127.0.0.1:1337/
+  #haxexample
+    article
+      header
+        h2 haxenode
+        code
+          | import js.Node;
+          | class Haxenode
+          | {
+          |   public static function main()
+          |   {
+          |     var server = Node.http.createServer(function(req:NodeHttpServerReq, res:NodeHttpServerResp) {
+          |       res.setHeader("Content-Type","text/plain");
+          |       res.writeHead(200);
+          |       res.end('Hello World\\n');
+          |     });
+          | 
+          |     server.listen(1337,"localhost");
+          |     trace( 'Server running at http://127.0.0.1:1337/' );
+          |   }
+          | }
+        strong compile
+        br
+        kbd $ haxe -lib nodejs -D nodejs -js haxenode.js -main Haxenode
+        br
+        strong run server
+        br
+        kbd $ node haxenode.js
+        br
+        samp Server running at http://127.0.0.1:1337/
 
 #whatishaxe
   article
     header
-      h2 What is haxenode?
+      h1 What is haxenode?
+    #whatishaxe-left
+      h2 All the power of haXe
+      ul
+        li Strong typing
+        li Type inference
+        li Inlining
+        li Interfaces
+        li Generics
+      ul
+        li Packages
+        li Classes
+        li Macros
+        li Enums
+        li Iterators
+    #whatishaxe-right  
+      span.plus +
+      h2 All the benefits of Node.js
+      p event-driven, non-blocking design. npm and many node.js libraries and frameworks are available.
+
+#whatishaxe
+  article
+    header
+      h1 Why use haXe?
+      h3 You can create apps using a single unified programming language.
+    ul
+      li.whyusehaxeblock
+        h2
+          | Use existing haXe &amp;
+          br 
+          | JavaScript code
+        hr
+        p 
+          | You can take advantage of the many other haXe, JavaScript, and node.js libraries such as JQuery, express, &amp; mongo db. including many others from
+          a(href="http://lib.haxe.org") haxelib
+          | .
+      li.whyusehaxeblock
+        h2
+          | ECMA style 
+          br 
+          | programming
+        hr
+        p ECMA style programming for client-side, server-side &amp; desktop. The haXe syntax is familiar to those coming from ActionScript and JavaScript.
+      li.whyusehaxeblock
+        h2
+          | JavaScript2 
+          br 
+          | (ECMA4) features
+        hr
+        p JavaScript2 promised a lot of great features for the future. HaXe provides a very similar experience now &amp; is fully compatible with current browsers.
+      li.whyusehaxeblock
+        h2
+          | Extremely fast 
+          br 
+          | compiling
+        hr
+        p The compiler is lightning fast (Benchmarks!).
+      li.whyusehaxeblock
+        h2
+          | The benefits of 
+          br 
+          | type checking
+        hr
+        p Strict type checking &amp; compile-time checks allows you to catch errors before testing in the browser or vm. This means a faster workflow for dynamically typed targets (like JavaScript).
+      li.whyusehaxeblock
+        h2
+          | Elegant Remoting
+          br 
+          | between platforms
+        hr
+        p Pass objects between different platforms using remoting classes from the same codebase. Successful de-serialization makes remoting between platforms elegant and fast.
+
+#installation
+  article
+    header
+      h1 Download and install haXenode
+    #installing-haxe
+      h2 Install haXe
+      ul
+        li
+          a(href="http://haxe.org/file/hxinst.dmg") OSX Installer
+        li 
+          a(href="http://haxe.org/file/hxinst-win.exe") Windows Installer
+        li 
+          a(href="http://haxe.org/file/hxinst-linux.tgz") Linux Installer
+        li
+          a(href="http://haxe.org/download") More info and manual install
+    #installing-nodejs
+      h2 Install node.js 0.6.7
+      ul
+        li
+          a(href="http://nodejs.org/dist/v0.6.7/node-v0.6.7.pkg") OSX Installer
+        li
+          a(href="http://nodejs.org/dist/v0.6.7/node-v0.6.7.msi") Windows Installer
+        li
+          a(href="http://nodejs.org/dist/v0.6.7/node-v0.6.7.tar.gz") Source Code
+        li
+          a(href="http://nodejs.org/#download") More installation options

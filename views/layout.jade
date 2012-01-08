@@ -14,7 +14,8 @@ head
   meta(name='description', content='')
   meta(name='author', content='')
   meta(name='viewport', content='width=device-width,initial-scale=1')
-  link(rel='stylesheet', href='css/style.css')
+  link(rel='stylesheet', href='stylesheets/style.css')
+  link(rel='stylesheet', href='stylesheets/haxenode.css')
   script(src='javascripts/libs/modernizr-2.0.6.min.js')
 body
   #header-container
@@ -23,18 +24,80 @@ body
       nav
         ul
           li
-            a(href='#') Some
+            a(href='#') What is it?
           li
-            a(href='#') navigation
+            a(href='#') Installation
           li
-            a(href='#') links
+            a(href='#') Community
+          li
+            a(href='#') haXelib
+          li
+            a(href='#') haXejs
+          li
+            a(href='#') Learn
+          li
+            a(href='#') Download
+      
   #main.wrapper
     != body
     
 
   #footer-container
     footer.wrapper
-      h3 A nice footer
+      ul
+        li
+          h3 haXe resources
+          ul
+            li
+              a(href="http://haxe.org") haXe.org
+            li
+              a(href="http://haxe.org/api") haXe api
+            li
+              a(href="http://lib.haxe.org/") haxelib
+            li
+              a(href="http://haxe.org/doc/libraries") Libraries &amp; Frameworks
+            li
+              a(href="http://haxe.org/doc") Documentation &amp; Tutorials
+        li
+          h3 node.js resources
+          ul
+            li
+              a(href="http://nodejs.org/") node.js
+            li
+              a(href="http://nodejs.org/docs/latest/api/") node.js api
+            li
+              a(href="http://search.npmjs.org/") npm packages
+            li
+              a(href="https://github.com/joyent/node/wiki/modules") more node.js modules
+            li
+              a(href="http://groups.google.com/group/nodejs") node.js mailing list 
+        li
+          h3 haxenode resources
+          ul
+            li
+              a(href="http://lib.haxe.org/p/nodejs") nodejs on haxelib
+            li
+              a(href="http://lib.haxe.org/t/nodejs") haxenode libraries on haxelib
+            li 
+              a(href="https://groups.google.com/forum/#!forum/haxe-nodejs") haxenode-js mailing list
+            li
+              a(href="haxejs.org") haXe JS
+            li
+              a(href="http://haxe.org/com/ide/textmate") textmate bundle
+            li
+              a(href="http://haxe.org/com/ide") other ide/editors
+        li
+          h3 haxenode
+          ul
+            li
+              a(href="https://github.com/cloudshift") hx-node is maintained by Ritchie Turner
+            li
+              | haxenode.org maintained by 
+              a(href="http://twitter.com/theRemix") @theRemix
+            li 
+              a(href="https://github.com/theRemix/haXenode.org") haxenode.org source
+            
+              
   script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
   script
     window.jQuery || document.write('<script src="javascripts/libs/jquery-1.7.1.min.js"><\\/script>')
