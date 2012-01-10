@@ -5,6 +5,9 @@ body{
 	font-family:Helvetica, Helvetica Neue, Arial, sans-serif;
 	background: url('/images/dark_bg.png') #676867;
 }
+div#container{
+	background: url('/images/light_bg.png');
+}
 
 a{
 	color: #C7C9CC;
@@ -18,6 +21,12 @@ a:hover{
 
 h1, h2, h3, h4, p{
 	margin: 0px;
+}
+
+h2, div#footer-container h3{
+	-webkit-text-shadow: #121212 2px 2px 2px;
+	   -moz-text-shadow: #121212 2px 2px 2px;
+	        text-shadow: #121212 2px 2px 2px;
 }
 
 code, kbd, samp{
@@ -37,8 +46,6 @@ ul li{
 }
 
 div#main{
-	background: #676867;
-	padding-bottom: 45px;
 	border-bottom: 10px solid #ED822F;
 	-webkit-box-shadow:0 5px 80px 0px #111;
 	   -moz-box-shadow:0 5px 80px 0px #111;
@@ -48,7 +55,11 @@ div#main{
 
 #header-container{
 	background: url('/images/header.png') repeat-x;
-	height:163px;	
+	height:163px;
+	
+	-webkit-box-shadow: 0px 5px 60px 0px #212121;
+	   -moz-box-shadow: 0px 5px 60px 0px #212121;
+	        box-shadow: 0px 5px 60px 0px #212121;
 }
 
 
@@ -95,15 +106,17 @@ div.wrapper{
 	margin:auto;
 }
 
-
+div#main-content{
+	background: #676867;
+	padding-bottom: 45px;
+}
 
 div#haxenodexample{
-	background: url('/images/light_bg.png');
 	
 }
 
 div#haxenodexample div.wrapper{
-	padding: 85px 0px;
+	padding: 65px 0px 50px;
 	width: 1040px;
 }
 
@@ -121,6 +134,19 @@ div#haxenodexample article{
 div.code{
 	padding: 24px 30px;
 }
+
+div.code, div#haxenodexample article{
+	-webkit-box-shadow: 0px 18px 25px -18px #121212;
+	   -moz-box-shadow: 0px 18px 25px -18px #121212;
+	        box-shadow: 0px 18px 25px -18px #121212;
+}
+
+div#haxenodexample div.code{
+	-webkit-box-shadow: 0 0;
+	   -moz-box-shadow: 0 0;
+	        box-shadow: 0 0;
+}
+
 
 div#haxenodexample article.nodejscode, div#haxexample article.haxecode{
 	height: 298px;
@@ -146,10 +172,6 @@ div#haxenodexample article header h2{
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 13px;
-	
-	-webkit-box-shadow:0 40px 40px -40px #AAA;
-	   -moz-box-shadow:0 40px 40px -40px #AAA;
-	        box-shadow:0 40px 40px -40px #000;
 }
 
 div#haxexample article header.compile-and-run{
@@ -192,6 +214,9 @@ div.box, div#whyusehaxe ul li{
 	-webkit-border-radius: 10px;
 	   -moz-border-radius: 10px;
 	        border-radius: 10px;	
+	-webkit-box-shadow: 0px 18px 25px -18px #121212;
+	   -moz-box-shadow: 0px 18px 25px -18px #121212;
+	        box-shadow: 0px 18px 25px -18px #121212;
 }
 
 
