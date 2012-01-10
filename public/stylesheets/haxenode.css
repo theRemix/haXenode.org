@@ -3,7 +3,7 @@
 
 body{
 	font-family:Helvetica, Helvetica Neue, Arial, sans-serif;
-	background: #676867;
+	background: url('/images/dark_bg.png') #676867;
 }
 
 a{
@@ -36,6 +36,15 @@ ul li{
 	list-style: none;
 }
 
+div#main{
+	background: #676867;
+	padding-bottom: 45px;
+	border-bottom: 10px solid #ED822F;
+	-webkit-box-shadow:0 5px 80px 0px #111;
+	   -moz-box-shadow:0 5px 80px 0px #111;
+	        box-shadow:0 5px 80px 0px #111;
+
+}
 
 #header-container{
 	background: url('/images/header.png') repeat-x;
@@ -84,7 +93,6 @@ nav a:hover{
 div.wrapper{
 	width: 1040px;
 	margin:auto;
-
 }
 
 
@@ -164,12 +172,7 @@ div#haxexample{
 }
 
 
-div.inner-wrapper{
-	width: 770px;
-	float: left;
-}
-
-div.inner-wrapper h1{
+div#main article header h1{
 	background: url('/images/h1.png') no-repeat left center;
 	height: 38px;
 	line-height: 38px;
@@ -193,9 +196,10 @@ div.box, div#whyusehaxe ul li{
 
 
 div.box ul li{
-	font-size: 16px;
+	font-size: 14px;
 	padding: 3px 0px;
 	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 div.box ul li a{
 	color: #A7A9AC;
@@ -210,12 +214,14 @@ div.box ul li a:hover{
 
 div.box h2{
 	color: #ED822F;
-	font-weight: normal;
+	font-weight: bold;
 	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 2px;
 }
 
 div#whatishaxe-left, div#whatishaxe-right{
-	width: 336px;
+	width: 490px;
 	text-transform: uppercase;
 }
 div#whatishaxe-left{
@@ -226,7 +232,7 @@ div#whatishaxe-left div.content-wrapper{
 	margin-top: 20px;
 }
 div#whatishaxe-left ul{
-	width: 150px;
+	width: 163px;
 	float: left;
 }
 div#whatishaxe-left ul:last-child{
@@ -235,39 +241,43 @@ div#whatishaxe-left ul:last-child{
 
 div#whatishaxe-right{
 	float: right;
+	width: 456px;
+	padding-left: 34px;
 }
 div#whatishaxe-right span.plus{
-	margin-left: -50px;
-	margin-right: 26px;
-	font-size: 38px;
+	margin-left: 0px;
+	margin-right: 8px;
+	font-size: 26px;
 	line-height: 10px;
 }
 div#whatishaxe-right div.content-wrapper{
 	margin-top: 20px;
-	font-size: 16px;
+	font-size: 14px;
+	letter-spacing: 1px;
 	line-height: 24px;
 }
 
 div#whyusehaxe article header h3{
 	color: #3A3A3C;
 	margin-top: -25px;
-	margin-left: 30px;
+	margin-left: 31px;
 	margin-bottom: 30px;
-	font-size: 15px;
-	font-weight: bold;
+	font-size: 14px;
+	font-weight: normal;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
 div#whyusehaxe ul li{
-	width: 198px; /*235px;*/
-	height: 178px; /*200px;*/
-	padding: 15px 20px;
+	width: 268px;
+	height: 170px;
+	padding: 20px 30px;
 	margin-right: 27px;
 	margin-bottom: 24px;
 	float: left;
 }
 div#whyusehaxe ul li.second-row{
 	margin-bottom: 0px;
+	height: 148px;
 }
 div#whyusehaxe ul li.third-column{
 	margin-right: 0px;
@@ -276,8 +286,8 @@ div#whyusehaxe ul li h2{
 	color: #ED822F;
 	font-weight: normal;
 	text-transform: uppercase;
-	font-size: 14px;
-	line-height: 19px;
+	font-size: 15px;
+	line-height: 22px;
 	letter-spacing: 1px;
 }
 div#whyusehaxe ul li hr{
@@ -285,29 +295,39 @@ div#whyusehaxe ul li hr{
 }
 div#whyusehaxe ul li p{
 	font-weight: lighter;
-	font-size: 12px;
-	line-height: 17px;
+	font-size: 14px;
+	line-height: 20px;
 }
 
 
 div#installation{
 	
 }
+div#installation ul{
+	width: 227px;
+	float: left;
+}
+div#installation ul:last-childe{
+	float: right;
+}
 div#installation h2{
 	margin-bottom: 20px;	
 }
 
 div#installing-haxe, div#installing-nodejs{
-	width: 335px;
+	width: 490px;
 }
 div#installing-haxe{
 	float: left;
+	border-right: 1px solid #1D1D1E;
 }
 div#installing-nodejs{
 	float: right;
+	width: 455px;
+	padding-left: 34px;
 }
 div#installing-haxe ul{
-	border-right: 1px solid #1D1D1E;
+	
 }
 
 #installation div.box:last-child{
@@ -315,7 +335,7 @@ div#installing-haxe ul{
 }
 
 
-div.inner-wrapper div#installation-haxenode article.haxecode{
+div#installation-haxenode article.haxecode{
 	background: #212326; /*#3A3A3C;*/
 	color: #DDD; /*#A7A9AC;*/
 	margin-bottom: 15px;
@@ -327,7 +347,7 @@ div.inner-wrapper div#installation-haxenode article.haxecode{
 }
 
 
-div.inner-wrapper div#installation-haxenode article.haxecode header{
+div#installation-haxenode article.haxecode header{
 	background: #666; /*#A7A9AC;*/
 	width: auto;
 	padding: 0 20px;
@@ -339,7 +359,7 @@ div.inner-wrapper div#installation-haxenode article.haxecode header{
 	        border-radius: 0 10px 0 10px;
 }
 
-div.inner-wrapper div#installation-haxenode article.haxecode header h2{
+div#installation-haxenode article.haxecode header h2{
 	color: #A7A9AC; /*#ED822F;*/ /*#333333;*/
 	height: 30px;
 	line-height: 32px;
@@ -347,48 +367,58 @@ div.inner-wrapper div#installation-haxenode article.haxecode header h2{
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 13px;
-	
-	-webkit-box-shadow:0 40px 40px -40px #AAA;
-	   -moz-box-shadow:0 40px 40px -40px #AAA;
-	        box-shadow:0 40px 40px -40px #000;
 }
 
 
-div#downloadaside{
-	width:230px;
-	float: right;
-}
 
-aside{
-	color:white;
-	padding:20px;
-
-	background-color:#f16529;
-	border-bottom:20px solid #e44d26;
-	margin-bottom:50px;
-}
-
-
-article header{
-	
-}
-
-#footer-container{
-	background-color:#f16529;
+div#footer-container{
 	height:240px;
-	border-top:20px solid #e44d26;
-	margin-top:50px;
-	-webkit-box-shadow:0 -40px 40px -40px #AAA;
-	   -moz-box-shadow:0 -40px 40px -40px #AAA;
-	        box-shadow:0 -40px 40px -40px #AAA;
+	border-top:1px solid #b66127;
 }
 
-
-
-#footer-container footer{
-	color:white;
+div#footer-container > footer > ul{
+	width: 1040px;
+	margin: auto;
+	margin-top: 30px;
+}
+div#footer-container > footer > ul > li{
+	width: 210px; /*260px;*/
+	padding: 25px;
+	float: left;
+}
+div#footer-container > footer > ul > li >ul{
+	
 }
 
+div#footer-container > footer > ul > li > ul > li{
+	color: #A7A9AC;
+	font-weight: lighter;
+	font-size: 14px;
+	line-height: 20px;
+	
+}
+div#footer-container > footer > ul > li:last-child > ul > li{
+	margin-bottom: 10px;
+}
+
+div#footer-container > footer > ul > li > h3{
+	color: #ED822F;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 15px;
+	line-height: 22px;
+	letter-spacing: 1px;
+	margin-bottom: 14px;
+}
+
+div#footer-container > footer > ul > li > ul > li > a{
+	color: #A7A9AC;
+	border: 0px solid;
+}
+div#footer-container > footer > ul > li > ul > li > a:hover{
+	color: #ED822F;
+	border-bottom: 1px dotted #A9ABAD;
+}
 
 
 

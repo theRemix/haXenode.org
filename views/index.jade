@@ -65,146 +65,136 @@
           br
           samp Server running at http://127.0.0.1:1337/
 
-.wrapper.clearfix
-  .inner-wrapper.clearfix
-    #whatishaxenode.clearfix
-      article
-        header
-          h1 What is haxenode?
-        .box.clearfix
-          #whatishaxe-left
-            h2 All the power of haXe
-            .content-wrapper.clearfix
-              ul
-                li
-                  a(href="") Strong typing
-                li
-                  a(href="") Type inference
-                li
-                  a(href="") Inlining
-                li
-                  a(href="") Interfaces
-                li
-                  a(href="") Generics
-              ul
-                li
-                  a(href="") Packages
-                li
-                  a(href="") Classes
-                li
-                  a(href="") Macros
-                li
-                  a(href="") Enums
-                li
-                  a(href="") Iterators
-          #whatishaxe-right  
-            h2 
-              span.plus +
-              | All the benefits of Node.js
-            .content-wrapper.clearfix
-              p event-driven, non-blocking design. npm and many node.js libraries and frameworks are available.
-
-    #whyusehaxe
-      article
-        header
-          h1 Why use haXe?
-          h3 You can create apps using a single unified programming language.
-        .content-wrapper
-          ul.clearfix
-            li
-              h2
-                | Use existing haXe &amp;
-                br 
-                | JavaScript code
-              hr
-              p 
-                | You can take advantage of the many other haXe, JavaScript, and node.js libraries such as JQuery, express, &amp; mongo db. including many others from
-                a(href="http://lib.haxe.org") haxelib
-                | .
-            li
-              h2
-                | ECMA style 
-                br 
-                | programming
-              hr
-              p ECMA style programming for client-side, server-side &amp; desktop. The haXe syntax is familiar to those coming from ActionScript and JavaScript.
-            li.third-column
-              h2
-                | JavaScript2 
-                br 
-                | (ECMA4) features
-              hr
-              p JavaScript2 promised a lot of great features for the future. HaXe provides a very similar experience now &amp; is fully compatible with current browsers.
-            li.second-row
-              h2
-                | Extremely fast 
-                br 
-                | compiling
-              hr
-              p The compiler is lightning fast (Benchmarks!).
-            li.second-row
-              h2
-                | The benefits of 
-                br 
-                | type checking
-              hr
-              p Strict type checking &amp; compile-time checks allows you to catch errors before testing in the browser or vm. This means a faster workflow for dynamically typed targets (like JavaScript).
-            li.second-row.third-column
-              h2
-                | Elegant Remoting
-                br 
-                | between platforms
-              hr
-              p Pass objects between different platforms using remoting classes from the same codebase. Successful de-serialization makes remoting between platforms elegant and fast.
-
-    #installation
-      article
-        header
-          h1 Install haXe and node-js
-        .box.clearfix
-          #installing-haxe
-            h2 Install haXe
+.wrapper
+  #whatishaxenode.clearfix
+    article
+      header
+        h1 What is haxenode?
+      .box.clearfix
+        #whatishaxe-left
+          h2 All the power of haXe
+          .content-wrapper.clearfix
             ul
               li
-                a(href="http://haxe.org/file/hxinst.dmg") OSX Installer
-              li 
-                a(href="http://haxe.org/file/hxinst-win.exe") Windows Installer
-              li 
-                a(href="http://haxe.org/file/hxinst-linux.tgz") Linux Installer
+                a(href="") Strong typing
               li
-                a(href="http://haxe.org/download") More info and manual install
-          #installing-nodejs
-            h2 Install node.js 0.6.7
+                a(href="") Inlining
+              li
+                a(href="") Interfaces
+              li
+                a(href="") Type inference
             ul
               li
-                a(href="http://nodejs.org/dist/v0.6.7/node-v0.6.7.pkg") OSX Installer
+                a(href="") Generics
               li
-                a(href="http://nodejs.org/dist/v0.6.7/node-v0.6.7.msi") Windows Installer
+                a(href="") Packages
               li
-                a(href="http://nodejs.org/dist/v0.6.7/node-v0.6.7.tar.gz") Source Code
+                a(href="") Classes
+            ul
               li
-                a(href="http://nodejs.org/#download") More installation options
-    
-    #installation-haxenode
-      article
-        header
-          h1 Install haXenode
+                a(href="") Macros
+              li
+                a(href="") Enums
+              li
+                a(href="") Iterators
+        #whatishaxe-right  
+          h2 
+            span.plus +
+            | All the benefits of Node.js
+          .content-wrapper.clearfix
+            p event-driven, non-blocking design. npm and many node.js libraries and frameworks are available.
+
+  #whyusehaxe
+    article
+      header
+        h1 Why use haXe?
+        h3 You can create apps using a single unified programming language.
+      .content-wrapper
+        ul.clearfix
+          li
+            h2
+              | Use existing haXe &amp;
+              br 
+              | JavaScript code
+            hr
+            p 
+              | You can take advantage of the many other haXe, JavaScript, and node.js libraries such as JQuery, express, &amp; mongo db. including many others from
+              a(href="http://lib.haxe.org") haxelib
+              | .
+          li
+            h2
+              | JavaScript2 
+              br 
+              | (ECMA4) features
+            hr
+            p JavaScript2 promised a lot of great features for the future. HaXe provides a very similar experience now &amp; is fully compatible with current browsers.
+          li.third-column
+            h2
+              | Elegant Remoting
+              br 
+              | between platforms
+            hr
+            p Pass objects between different platforms using remoting classes from the same codebase. Successful de-serialization makes remoting between platforms elegant and fast.
+          li.second-row
+            h2 Benefits type checking
+            hr
+            p Strict type checking &amp; compile-time checks allows you to catch errors before testing in the browser or vm. This means a faster workflow for dynamically typed targets (like JavaScript).
+          li.second-row
+            h2 ECMA style programming
+            hr
+            p ECMA style programming for client-side, server-side &amp; desktop. The haXe syntax is familiar to those coming from ActionScript and JavaScript.
+          li.second-row.third-column
+            h2 Extremely fast compiling
+            hr
+            p The compiler is lightning fast (Benchmarks!).
           
-      article.haxecode
-        header
-          h2 Install nodejs with haxelib
-        .code
-          code.comment # Setup haxelib if you haven&#039;t done so already
-          br
-          kbd $ haxelib setup
-          br
-          samp
-            | Please enter haxelib repository path with write access
-            | Hit enter for default (/usr/lib/haxe/lib)
-            | Path : 
-            | haxelib repository is now /usr/lib/haxe/lib/
-          br
-          kbd $ haxelib install nodejs
-            
-  #downloadaside
-    aside DOWNLOAD
+  #installation
+    article
+      header
+        h1 Install haXe and node-js
+      .box.clearfix
+        #installing-haxe
+          h2 Install haXe
+          ul
+            li
+              a(href="http://haxe.org/file/hxinst.dmg") OSX Installer
+            li 
+              a(href="http://haxe.org/file/hxinst-win.exe") Windows Installer
+          ul
+            li 
+              a(href="http://haxe.org/file/hxinst-linux.tgz") Linux Installer
+            li
+              a(href="http://haxe.org/download") Manual install and more
+        #installing-nodejs
+          h2 Install node.js 0.6.7
+          ul
+            li
+              a(href="http://nodejs.org/dist/v0.6.7/node-v0.6.7.pkg") OSX Installer
+            li
+              a(href="http://nodejs.org/dist/v0.6.7/node-v0.6.7.msi") Windows Installer
+          ul
+            li
+              a(href="http://nodejs.org/dist/v0.6.7/node-v0.6.7.tar.gz") Source Code
+            li
+              a(href="http://nodejs.org/#download") More install options
+  
+  #installation-haxenode
+    article
+      header
+        h1 Install haXenode
+        
+    article.haxecode
+      header
+        h2 Install nodejs with haxelib
+      .code
+        code.comment # Setup haxelib if you haven&#039;t done so already
+        br
+        kbd $ haxelib setup
+        br
+        samp
+          | Please enter haxelib repository path with write access
+          | Hit enter for default (/usr/lib/haxe/lib)
+          | Path : 
+          | haxelib repository is now /usr/lib/haxe/lib/
+        br
+        kbd $ haxelib install nodejs
