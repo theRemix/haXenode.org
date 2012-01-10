@@ -1,5 +1,445 @@
+/* @override http://localhost:3117/stylesheets/haxenode.css */
 
 
-code{
+body{
+	font-family:Helvetica, Helvetica Neue, Arial, sans-serif;
+	background: #676867;
+}
+
+a{
+	color: #C7C9CC;
+	text-decoration: none;
+	border-bottom: 1px dotted #C7C9CC;
+}
+a:hover{
+	color: #FCFDFF;
+	border-bottom: 1px dotted #ED822F;
+}
+
+h1, h2, h3, h4, p{
+	margin: 0px;
+}
+
+code, kbd, samp{
   white-space: pre;
+}
+.comment{
+	color: #666;
+}
+
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+
+
+#header-container{
+	background: url('/images/header.png') repeat-x;
+	height:163px;	
+}
+
+
+h1#title{
+	width: 87px;
+	height: 124px; /*99px;*/
+	margin: auto;
+	margin-top: 0px;
+	background: url('/images/logo.png') no-repeat bottom;
+	margin-bottom: 14px;
+}
+
+header nav{
+	margin: auto;
+	width: 1040px;
+}
+
+header nav ul{
+	margin: auto;
+	width: 850px;
+	padding-top: 4px;
+}
+
+header nav ul li{
+	display:inline;
+}
+
+nav a{
+	padding: 0px 20px;
+	color:#3A3A3C;
+	text-decoration:none;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 15px;
+	border: 0px solid;
+}
+nav a:hover{
+	border: 0px solid;
+}
+
+
+div.wrapper{
+	width: 1040px;
+	margin:auto;
+
+}
+
+
+
+div#haxenodexample{
+	background: url('/images/light_bg.png');
+	
+}
+
+div#haxenodexample div.wrapper{
+	padding: 85px 0px;
+	width: 1040px;
+}
+
+div#haxenodexample article{
+	background: #212326; /*#3A3A3C;*/
+	color: #DDD; /*#A7A9AC;*/
+	margin-bottom: 22px;
+	width: 506px;
+	min-height: 110px;
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+	        border-radius: 10px;
+}
+
+div.code{
+	padding: 24px 30px;
+}
+
+div#haxenodexample article.nodejscode, div#haxexample article.haxecode{
+	height: 298px;
+}
+
+
+div#haxenodexample article header{
+	background: #666; /*#A7A9AC;*/
+	width: 120px;
+	float: right;
+	background: url('/images/box_bg.png');
+	
+	-webkit-border-radius: 0 10px 0 10px;
+	   -moz-border-radius: 0 10px 0 10px;
+	        border-radius: 0 10px 0 10px;
+}
+
+div#haxenodexample article header h2{
+	color: #A7A9AC; /*#ED822F;*/ /*#333333;*/
+	height: 30px;
+	line-height: 32px;
+	letter-spacing: 2px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 13px;
+	
+	-webkit-box-shadow:0 40px 40px -40px #AAA;
+	   -moz-box-shadow:0 40px 40px -40px #AAA;
+	        box-shadow:0 40px 40px -40px #000;
+}
+
+div#haxexample article header.compile-and-run{
+	width: 160px;
+}
+header.compile-and-run h2{
+	width: 160px;
+}
+
+
+div#nodejsexample, div#haxexample{
+	
+}
+
+div#nodejsexample{
+	float: left;
+}
+div#haxexample{
+	float: right;
+}
+
+
+div.inner-wrapper{
+	width: 770px;
+	float: left;
+}
+
+div.inner-wrapper h1{
+	background: url('/images/h1.png') no-repeat left center;
+	height: 38px;
+	line-height: 38px;
+	text-indent: 30px;
+	color: #A7A9AC;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+	margin: 20px 0;
+}
+
+div.box, div#whyusehaxe ul li{
+	background: url('/images/box_bg.png');
+	padding: 30px;
+	color: #A7A9AC;
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+	        border-radius: 10px;	
+}
+
+
+div.box ul li{
+	font-size: 16px;
+	padding: 3px 0px;
+	text-transform: uppercase;
+}
+div.box ul li a{
+	color: #A7A9AC;
+	border: 0px solid;
+}
+div.box ul li a:hover{
+	color: #ED822F;
+	border-bottom: 1px dotted #A9ABAD;
+}
+
+
+
+div.box h2{
+	color: #ED822F;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+div#whatishaxe-left, div#whatishaxe-right{
+	width: 336px;
+	text-transform: uppercase;
+}
+div#whatishaxe-left{
+	float: left;
+}
+div#whatishaxe-left div.content-wrapper{
+	border-right: 1px solid #1D1D1E;
+	margin-top: 20px;
+}
+div#whatishaxe-left ul{
+	width: 150px;
+	float: left;
+}
+div#whatishaxe-left ul:last-child{
+	float: right;
+}
+
+div#whatishaxe-right{
+	float: right;
+}
+div#whatishaxe-right span.plus{
+	margin-left: -50px;
+	margin-right: 26px;
+	font-size: 38px;
+	line-height: 10px;
+}
+div#whatishaxe-right div.content-wrapper{
+	margin-top: 20px;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+div#whyusehaxe article header h3{
+	color: #3A3A3C;
+	margin-top: -25px;
+	margin-left: 30px;
+	margin-bottom: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+div#whyusehaxe ul li{
+	width: 198px; /*235px;*/
+	height: 178px; /*200px;*/
+	padding: 15px 20px;
+	margin-right: 27px;
+	margin-bottom: 24px;
+	float: left;
+}
+div#whyusehaxe ul li.second-row{
+	margin-bottom: 0px;
+}
+div#whyusehaxe ul li.third-column{
+	margin-right: 0px;
+}
+div#whyusehaxe ul li h2{
+	color: #ED822F;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 19px;
+	letter-spacing: 1px;
+}
+div#whyusehaxe ul li hr{
+	border-color: #1D1D1E;	
+}
+div#whyusehaxe ul li p{
+	font-weight: lighter;
+	font-size: 12px;
+	line-height: 17px;
+}
+
+
+div#installation{
+	
+}
+div#installation h2{
+	margin-bottom: 20px;	
+}
+
+div#installing-haxe, div#installing-nodejs{
+	width: 335px;
+}
+div#installing-haxe{
+	float: left;
+}
+div#installing-nodejs{
+	float: right;
+}
+div#installing-haxe ul{
+	border-right: 1px solid #1D1D1E;
+}
+
+#installation div.box:last-child{
+	margin-top: 16px;
+}
+
+
+div.inner-wrapper div#installation-haxenode article.haxecode{
+	background: #212326; /*#3A3A3C;*/
+	color: #DDD; /*#A7A9AC;*/
+	margin-bottom: 15px;
+	width: auto;
+	min-height: 110px;
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+	        border-radius: 10px;
+}
+
+
+div.inner-wrapper div#installation-haxenode article.haxecode header{
+	background: #666; /*#A7A9AC;*/
+	width: auto;
+	padding: 0 20px;
+	float: right;
+	background: url('/images/box_bg.png');
+	
+	-webkit-border-radius: 0 10px 0 10px;
+	   -moz-border-radius: 0 10px 0 10px;
+	        border-radius: 0 10px 0 10px;
+}
+
+div.inner-wrapper div#installation-haxenode article.haxecode header h2{
+	color: #A7A9AC; /*#ED822F;*/ /*#333333;*/
+	height: 30px;
+	line-height: 32px;
+	letter-spacing: 2px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 13px;
+	
+	-webkit-box-shadow:0 40px 40px -40px #AAA;
+	   -moz-box-shadow:0 40px 40px -40px #AAA;
+	        box-shadow:0 40px 40px -40px #000;
+}
+
+
+div#downloadaside{
+	width:230px;
+	float: right;
+}
+
+aside{
+	color:white;
+	padding:20px;
+
+	background-color:#f16529;
+	border-bottom:20px solid #e44d26;
+	margin-bottom:50px;
+}
+
+
+article header{
+	
+}
+
+#footer-container{
+	background-color:#f16529;
+	height:240px;
+	border-top:20px solid #e44d26;
+	margin-top:50px;
+	-webkit-box-shadow:0 -40px 40px -40px #AAA;
+	   -moz-box-shadow:0 -40px 40px -40px #AAA;
+	        box-shadow:0 -40px 40px -40px #AAA;
+}
+
+
+
+#footer-container footer{
+	color:white;
+}
+
+
+
+
+
+/* =============================================================================
+   Non-semantic helper classes
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+
+
+/* =============================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
 }
