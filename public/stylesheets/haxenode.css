@@ -9,7 +9,7 @@ div#container{
 	background: url('/images/light_bg.png');
 }
 
-a{
+a,a:visited{
 	color: #C7C9CC;
 	text-decoration: none;
 	border-bottom: 1px dotted #C7C9CC;
@@ -87,7 +87,7 @@ header nav ul li{
 	display:inline;
 }
 
-nav a{
+nav a,nav a:visited{
 	padding: 0px 20px;
 	color:#3A3A3C;
 	text-decoration:none;
@@ -226,7 +226,7 @@ div.box ul li{
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
-div.box ul li a{
+div.box ul li a, div.box ul li a:visited{
 	color: #A7A9AC;
 	border: 0px solid;
 }
@@ -360,7 +360,8 @@ div#installing-haxe ul{
 }
 
 
-div#installation-haxenode article.haxecode{
+div#installation-haxenode article.haxecode,
+div.what_is_pop article{
 	background: #212326; /*#3A3A3C;*/
 	color: #DDD; /*#A7A9AC;*/
 	margin-bottom: 15px;
@@ -372,7 +373,8 @@ div#installation-haxenode article.haxecode{
 }
 
 
-div#installation-haxenode article.haxecode header{
+div#installation-haxenode article.haxecode header,
+div.what_is_pop article header{
 	background: #666; /*#A7A9AC;*/
 	width: auto;
 	padding: 0 20px;
@@ -384,7 +386,8 @@ div#installation-haxenode article.haxecode header{
 	        border-radius: 0 10px 0 10px;
 }
 
-div#installation-haxenode article.haxecode header h2{
+div#installation-haxenode article.haxecode header h2,
+div.what_is_pop article header h2{
 	color: #A7A9AC; /*#ED822F;*/ /*#333333;*/
 	height: 30px;
 	line-height: 32px;
@@ -436,7 +439,8 @@ div#footer-container > footer > ul > li > h3{
 	margin-bottom: 14px;
 }
 
-div#footer-container > footer > ul > li > ul > li > a{
+div#footer-container > footer > ul > li > ul > li > a,
+div#footer-container > footer > ul > li > ul > li > a:visited{
 	color: #A7A9AC;
 	border: 0px solid;
 }
@@ -445,6 +449,19 @@ div#footer-container > footer > ul > li > ul > li > a:hover{
 	border-bottom: 1px dotted #A9ABAD;
 }
 
+/* interactive elements */
+
+div.what_is_pop{
+	position: absolute;
+	margin-left: 540px;
+	top: 760px;
+}
+div.what_is_pop article{
+	width: 480px;
+}
+div.what_is_pop article, div.what_is_pop article div.code{
+	min-height: 230px;
+}
 
 
 
