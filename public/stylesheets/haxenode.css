@@ -19,8 +19,12 @@ a:hover{
 	border-bottom: 1px dotted #ED822F;
 }
 
-h1, h2, h3, h4, p{
+h1, h2, h3, h4, p, blockquote{
 	margin: 0px;
+}
+
+p{
+	margin-bottom: 12px;
 }
 
 h2, div#footer-container h3{
@@ -462,7 +466,20 @@ div.what_is_pop article{
 div.what_is_pop article, div.what_is_pop article div.code{
 	min-height: 230px;
 }
-
+div.what_is_pop article div.code{
+	padding: 36px 30px;
+}
+div.what_is_pop blockquote{
+	margin-top: 5px;
+	margin-bottom: 12px;
+	color: #999;
+	font-weight: lighter;
+	font-size: 14px;
+	line-height: 19px;
+}
+div.what_is_pop article div.code ul li{
+	margin-bottom: 10px;
+}
 
 
 /* =============================================================================

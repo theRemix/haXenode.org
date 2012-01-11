@@ -77,110 +77,407 @@
             .content-wrapper.clearfix
               ul
                 li
-                  a#what_is_strong_typing(href="") Strong typing
+                  a#what_is_strong_typing(href="http://haxe.org/ref/type_advanced") Strong Typing
                 li
-                  a#what_is_inlining(href="") Inlining
+                  a#what_is_inlining(href="http://haxe.org/ref/inline") Inlining
                 li
-                  a#what_is_interfaces(href="") Interfaces
+                  a#what_is_interfaces(href="http://haxe.org/ref/oop") Interfaces
                 li
-                  a#what_is_type_inference(href="") Type inference
+                  a#what_is_type_inference(href="http://haxe.org/ref/type_infer") Type inference
               ul
                 li
-                  a#what_is_generics(href="") Generics
+                  a#what_is_generics(href="http://haxe.org/ref/type_params") Generics
                 li
-                  a#what_is_packages(href="") Packages
+                  a#what_is_packages(href="http://haxe.org/ref/packages") Packages
                 li
-                  a#what_is_classes(href="") Classes
+                  a#what_is_classes(href="http://haxe.org/ref/oop") Classes
+                li
+                  a#what_is_conditionals(href="http://haxe.org/ref/conditionals") Conditionals
               ul
                 li
-                  a#what_is_macros(href="") Macros
+                  a#what_is_macros(href="http://haxe.org/manual/macros") Macros
                 li
-                  a#what_is_enums(href="") Enums
+                  a#what_is_enums(href="http://haxe.org/ref/enums") Enums
                 li
-                  a#what_is_iterators(href="") Iterators
+                  a#what_is_iterators(href="http://haxe.org/ref/iterators") Iterators
           #whatishaxe-right  
             h2 
               span.plus +
               | All the benefits of Node.js
             .content-wrapper.clearfix
-              p event-driven, non-blocking design. npm and many node.js libraries and frameworks are available.
+              p event-driven, non-blocking design. Use npm and many open-source node.js libraries and frameworks.
         #what_is_strong_typing_pop.what_is_pop
           article
             header
-              h2 What is Strong Typing
+              h2 What is Strong Typing?
             .code
-              | What is Strong Typing
-              | What is Strong Typing
-              | What is Strong Typing
+              blockquote(cite="http://haxe.org/ref/type_advanced")
+                p The haXe compiler uses static type checking at compile-time so you have a stronger guarantee of the application&#039;s behavior at run-time. HaXe uses several kinds of types.
+              ul
+                li
+                  dfn Class
+                  br.hidden
+                  code.hidden class Int extends Float { }
+                
+                li 
+                  dfn Enum
+                  br
+                  p has a finite number of constructors
+                  code.hidden
+                    | enum Bool {
+                    |   true;
+                    |   false;
+                    | }
+                    
+                li
+                  dfn Dynamic
+                  br
+                  p skips compile-time type-checking
+                
+                li
+                  dfn Typedef
+                  br
+                  p Define a structure or long type to reuse throughout your applications.
+                  code.hidden
+                    | typedef User = {
+                    |   var age : Int;
+                    |   var name : String;
+                    | }
+                    span.comment \// ....
+                    br
+                    | var u : User = { age : 26, name : "Tom" };
+                li
+                  dfn Function
+                  br
+                  p Define function types as variables.
+                  code.hidden
+                    span.comment \// assign a function type to a variable &#039;ftype&#039;, function accepts a String and returns a String
+                    br
+                    | var ftype : String -> String
+                    | 
+                    span.comment \// create a function
+                    br
+                    | function modifyString(s : String) : String {
+                    |   return StringTools.replace(s," ","_");
+                    | }
+                    | 
+                    span.comment\// check against it
+                    br
+                    | static function main(){
+                    |   trace( type(modifyString) == f ); \// print true
+                    | }
+                li
+                  dfn Extensions
+                  br
+                  p
+                    | Extends either a typedef or a class on-the-fly.
+                    br
+                    | Or create cascading typedefs.
+                  code.hidden
+                    span.comment \// anonymous typedef extension
+                    br
+                    | typedef Point = {
+                    |   var x : Int;
+                    |   var y : Int;
+                    | }
+                    | 
+                    span.comment \// define 'p' as a Point with an additional field z
+                    br
+                    | var p : {> Point, z : Int }
+                    | p = { x : 0, y : 0, z : 0 }; // works
+                    | p = { x : 0, y : 0 }; // fails
+                  p.hidden Use Extensions to create cascading typedefs
+                  code.hidden
+                    | typedef Point = {
+                    |   var x : Int;
+                    |   var y : Int;
+                    | }
+                    | typedef Point3D = {> Point,
+                    |   var z : Int;
+                    | }
+                      
+                    
         #what_is_inlining_pop.what_is_pop
           article
             header
-              h2 What is Inlining
+              h2 What is Inlining?
             .code
-              | What is Inlining
-              | What is Inlining
-              | What is Inlining
+              blockquote(cite="http://haxe.org/ref/inline")
+                | The main advantage of using &ldquo;inline&rdquo; is that you can use as many variables as you want without slowing down your code with these variables accesses since the value is directly replaced in the compiled/generated code.
+              code
+                span.comment \// Inlining Static Variables
+                br
+                | class Test {
+                |   static inline var WIDTH = 500; <span class="comment">\// type Int inferred</span>
+                |   static function main() {
+                |     trace(WIDTH);
+                |     <span class="comment">\// variable is replaced with 500 at compile-time</span>
+                |   }
+                | }
+              br
+              blockquote(cite="http://haxe.org/ref/inline")
+                | The principle is the same for a method. The less expensive function call is the one that is never done. In order to achieve that for small methods that are often called, you can &ldquo;inline&rdquo; the method body at the place the method is called.
+              code
+                span.comment \// Inlining Methods
+                br
+                | class Point {
+                |   public var x : Float;
+                |   public var y : Float;
+                |   public function new(x,y) { this.x = x; this.y = y; }
+                |   public <em>inline</em> function add(x2,y2) { 
+                |     return new Point(x+x2,y+y2); }
+                | }
+                | class Test {
+                |   public static function main() {
+                |     var p = new Point(1,2);
+                |     var p2 = p.add(2,3);
+                |     <span class="comment">// is the same as writing :</span>
+                |     var p2 = new Point(p.x+2,p.y+3);
+                |   }
+                | }
         #what_is_interfaces_pop.what_is_pop
           article
             header
-              h2 What is an Interface
+              h2 What is an Interface?
             .code
-              | What is an Interface
-              | What is an Interface
-              | What is an Interface
+              blockquote(cite="http://en.wikipedia.org/wiki/Interface_(computing)#Software_interfaces_in_object_oriented_languages")
+                p In object-oriented languages the term &ldquo;interface&rdquo; is often used to define an abstract type that contains no data, but exposes behaviors defined as methods. A class having all the methods corresponding to that interface is said to implement that interface. Furthermore, a class can implement multiple interfaces, and hence can be of different types at the same time.
+                p An interface is hence a type definition; anywhere an object can be exchanged (in a function or method call) the type of the object to be exchanged can be defined in terms of an interface instead of a specific class. This allows later code to use the same function exchanging different object types; hence such code turns out to be more generic and reusable.
+                p.comment cite: http://en.wikipedia.org/wiki/Interface_(computing)
+                
         #what_is_type_inference_pop.what_is_pop
           article
             header
-              h2 What is Type Inference
+              h2 What is Type Inference?
             .code
-              | What is Type Inference
+              blockquote(cite="http://haxe.org/ref/type_infer")
+                p Type Inference means that the type information is not only checked in the program, it&#039;s also carried when typing, so it doesn&#039;t have to be resolved immediately. For example a local variable can be declared without any type (it will have the type Unknown) and when first used, its type will be set to the corresponding one.
+                p Type Inference enables the whole program to be strictly typed without any need to put types everywhere. In particular, local variables do not need to be typed, their types will be inferred when they are first accessed for reading or writing
+            
+              code
+                | var loc;
+                | type(loc); // print Unknown&lt;0&gt;
+                | loc = "hello";
+                | type(loc); // print String
+            
         #what_is_generics_pop.what_is_pop
           article
             header
-              h2 What is a Generic
+              h2 What are Generics?
             .code
-              | What is a Generic
-              | What is a Generic
-              | What is a Generic
+              blockquote(cite="http://haxe.org/ref/type_params")
+                p A class can have several type parameters that can be used to get extensible behavior.
+                p You can define your own parameterized classes with several type parameters for your own usage when you need it.
+              code
+                | class GenericTest&lt;T&gt; {
+                |   private var something:T;
+                |   public function putSomething(value:T):T{
+                |     something = value;
+                |     return something;
+                |   }
+                |   public function getSomething():T {
+                |     return something;
+                |   }
+                | }
+              br
+              code
+                span.comment \// Generic Factory Method example by <em>hhoelzer</em>
+                br
+                | class Item&lt;T&gt; {
+                |   public var value:T;
+                |   <span class="comment">\// factory method</span>
+                |   public static function create &lt;T&gt; ():Item&lt;T&gt; {
+                |     return new Item&lt;T&gt;();
+                |   }
+                |   private function new () {}  <span class="comment">\// private constructor</span>
+                | }
+                | 
+                span.comment \// test it
+                br
+                | class Main {
+                |   public static function main () {
+                |   <span class="comment">\\* this works because of type-inference, the compiler</span>
+                |   <span class="comment">knows that the return type must be of type Item&lt;Int&gt;*/</span>
+                |     var myItem:Item&lt;Int&gt; = Item.create(); 
+                |     myItem.value = 10; <span class="comment">\// works</span>
+                |     trace(myItem.value); <span class="comment">\// 10</span>
+                | 
+                |     <span class="comment">\// complex type example</span>
+                |     var myItem2:Item&lt;Array&lt;Int&gt;&gt; = Item.create();
+                |     myItem2.value = [1, 2, 3]; <span class="comment">\// works too</span>
+                |     trace(myItem2.value); <span class="comment">\// [1,2,3]</span>
+                |   }
+                | }
+                
         #what_is_packages_pop.what_is_pop
           article
             header
-              h2 What is a Package
+              h2 What is a Package?
             .code
-              | What is a Package
-              | What is a Package
-              | What is a Package
+              blockquote(cite="http://haxe.org/ref/packages")
+                p Packages are used to organize and contain classes in namespaces to prevent collisions and group functionally similar files together.
+              p
+                | the class 
+                u haxe.unit.TestCase
+                br
+                | belongs to package
+                u haxe.unit
+                br
+                | and the class file is located in
+                u haxe/unit/TestCase.hx
+                br 
+                span.comment \// in osx: /usr/lib/haxe/std/haxe/unit/TestCase.hx
+                
         #what_is_classes_pop.what_is_pop
           article
             header
-              h2 What is a Class
+              h2 What is a Class?
             .code
-              | What is a Class
+              blockquote(cite="http://en.wikipedia.org/wiki/Class_(computer_programming)")
+                p In object-oriented programming, a class is a construct that is used as a blueprint to create instances of itself – referred to as class instances, class objects, instance objects or simply objects. A class defines constituent members which enable these class instances to have state and behavior. Data field members (member variables or instance variables) enable a class object to maintain state. Other kinds of members, especially methods, enable a class object&#039;s behavior. Class instances are of the type of the associated class.
+                p.comment cite: http://en.wikipedia.org/wiki/Class_(computer_programming)
+                
         #what_is_macros_pop.what_is_pop
           article
             header
-              h2 What is a Macro
+              h2 What is a Macro?
             .code
-              | What is a Macro
-              | What is a Macro
-              | What is a Macro
+              blockquote(cite="http://haxe.org/manual/macros")
+                p Some languages features such as C #define enable the user to define syntax shortcuts. They are useful to perform some pseudo-code-generation, but at the same time allow to modify the syntax of the language, making the code unreadable for other developers.
+                p The haXe macro system allows powerful compile-time code-generation without modifying the haXe syntax.
+                p Macros are defined with the <code class="code">@:macro</code> Metadata
+              code
+                span.comment \// MyMacro.hx
+                br
+                | import haxe.macro.Expr;
+                | class MyMacro {
+                |   @:macro public static function getDate() {
+                |     var date = Date.now().toString();
+                |     var pos = haxe.macro.Context.currentPos();
+                |     return { expr : EConst(CString(date)), pos : pos };
+                |   }
+                | }
+                | 
+                span.comment \// Test.hx
+                br
+                | class Test {
+                |   static function main(){
+                |     var now = MyMacro.getDate(); <span class="comment">// String is inferred</span>
+                |     trace(now);
+                |     <span class="comment">// print the Date and time this file was <strong>compiled.</strong>
+                |   }
+                | }
+              blockquote
+                p Note: unlike <em>inline</em> functions you can do actual code generation inside the macro, before it gets compiled.
+                p I highly recommend reading more about this feature if you are new to it, it is very powerful.
+                
         #what_is_enums_pop.what_is_pop
           article
             header
-              h2 What is an Enum
+              h2 What is an Enum?
             .code
-              | What is an Enum
-              | What is an Enum
-              | What is an Enum
+              blockquote(cite="http://haxe.org/ref/enums")
+                p Enums are different to classes and are declared with a finite number of constructors.
+                p When you want to ensure that only a fixed number of values are used then enums are the best thing since they guarantee that other values cannot be constructed.
+              code
+                | enum Color {
+                |   red;
+                |   green;
+                |   blue;
+                | }
+                | 
+                | class ColorTools {
+                |   static function toInt( c : Color ) : Int {
+                |     return switch( c ) {
+                |       case red: 0xFF0000;
+                |       case green: 0x00FF00;
+                |       case blue: 0x0000FF;
+                |     }
+                |   }
+                | }
+        
         #what_is_iterators_pop.what_is_pop
           article
             header
-              h2 What is an Iterator
+              h2 What is an Iterator?
             .code
-              | What is an Iterator
-              | What is an Iterator
-              | What is an Iterator
-
+              blockquote(cite="http://haxe.org/ref/iterators")
+                p An iterator is an object which follows the Iterator typedef (The type T is the iterated type) :
+              code
+                | typedef Iterator&lt;T&gt; = {
+                |   function hasNext() : Bool;
+                |   function next() : T;
+                | }
+              blockquote(cite="http://haxe.org/ref/iterators")
+                p You can use the for syntax in order to execute iterators. The simplest iterator is the IntIter iterator which can easily be built using the operator ... (three dots). For example this will list all numbers from 0 to 9 :
+              code
+                | for( i in 0...10 ) {
+                |   trace(i);
+                | }
+                | 
+                span.comment \// Or the usual for loop :
+                br
+                | for( i in 0...arr.length ) {
+                |   foo( arr[i] );
+                | }
+                | 
+                span.comment \// Same as :
+                br
+                | for( item in arr ) {
+                |   foo( item );
+                | }
+        
+        #what_is_conditionals_pop.what_is_pop
+          article
+            header
+              h2 What is Conditional Compiling?
+            .code
+              blockquote(cite="http://haxe.org/ref/conditionals")
+                p Sometimes you might want to have a single library using specific API depending on the platform it is compiled on. At some other time, you might want to do some optimizations only if you turn a flag ON. For all that, you can use conditional compilation macros (AKA preprocessor macros)
+                p If the following example was compiled with <code class="code">-js out.js -D nodejs</code><br/>then starting the compiled javascript file with the node command will echo &ldquo;hello javascript!&rdquo; and &ldquo;hello node.js!&rdquo; to the console.
+              code
+                span.comment \// nested conditional example:
+                br
+                | #if js
+                |   <span class="comment">\// haXe code for javascript target</span>
+                |   js.Lib.alert(&ldquo;hello javascript!&rdquo;);
+                |   #if nodejs
+                |     <span class="comment">\// haXe code specific to nodejs</span>
+                |     Node.console.log(&ldquo;hello node.js!&rdquo;);
+                |   #else
+                |     <span class="comment">\// compile flag -D nodejs was not set</span>
+                |   #end
+                | #elseif php
+                |   <span class="comment">\// haXe code specific to php target</span>
+                |   php.Lib.println(&ldquo;hello php!&rdquo;);
+                | #else
+                |   <span class="comment">\// do something else</span>
+                | #end
+              br
+              code
+                span.comment \// multiplatform code example:
+                br
+                | #if flash8
+                span.comment \// haXe code specific for flash player 8
+                br
+                | #elseif flash
+                span.comment \// haXe code specific for flash platform (any version)
+                br
+                | #elseif js
+                span.comment \// haXe code specific for javascript plaform
+                br
+                | #elseif neko
+                span.comment \// haXe code specific for neko plaform
+                br
+                | #else 
+                span.comment \// do something else
+                br
+                |   #error  <span class="comment">// default: &ldquo;Not implemented on this platform&rdquo;</span>
+                |   <span class="comment">// or set your own error message</span>
+                |   #error &ldquo;Custom error message&rdquo;
+                | #end
+                
+                
     #whyusehaxe
       article
         header
