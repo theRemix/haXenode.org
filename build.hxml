@@ -2,8 +2,10 @@
 -D nodejs
 -js haxenode.js
 -main Haxenode
+--times
 
 --next
 -lib jQueryExtern
 -js public/javascripts/script.js
 -main UserScript
+--times
