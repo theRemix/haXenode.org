@@ -253,19 +253,21 @@ UserScript.prototype.what_is_pop = null;
 UserScript.prototype.what_is_list_item = null;
 UserScript.prototype.show_what_is = function(event) {
 	var selector = event.target.getAttribute("id") + "_pop";
-	new $("#" + selector).css({ opacity : 1, top : 760});
+	new $("#" + selector).css({ opacity : 1, display : "block", top : 760});
 	var tmp;
 	this.what_is_pop.each(function(idx,obj) {
 		if(obj.id != selector) {
 			tmp = new $("#" + obj.id);
-			if(Std.parseInt(tmp.css("opacity")) > 0) tmp.stop().animate({ opacity : 0, top : 774 + "px"},100);
+			if(Std.parseInt(tmp.css("opacity")) > 0) tmp.stop().css({ opacity : 0, top : 774 + "px", display : "none"});
 		}
 	});
 	return event;
 }
 UserScript.prototype.close_what_is = function(event) {
 	var selector = "#" + event.target.getAttribute("id") + "_pop";
-	new $(selector).stop().animate({ opacity : 0, top : 774 + "px"},100);
+	new $(selector).stop().animate({ opacity : 0, top : 774 + "px"},100,function() {
+		new $(selector).css("display","none");
+	});
 	return event;
 }
 UserScript.prototype.__class__ = UserScript;

@@ -37,10 +37,8 @@ class UserScript
     new JQuery(Lib.window).scroll(function(event){ 
       var nav = new JQuery('#header-container');
       var scrolltop = event.currentTarget.scrollY;
-      /*untyped( console.log(scrolltop) );*/
       var pos = nav.css('position');
       if (scrolltop > NAV_SCROLL_LIMIT && nav.css('position') != 'fixed'){ 
-/*        untyped( console.log(pos) );*/
         nav.css({position: 'fixed', top: '-'+NAV_SCROLL_LIMIT+'px'}); 
       }else if(scrolltop < NAV_SCROLL_LIMIT && nav.css('position') != 'absolute'){
         nav.css({position: 'absolute', top: '0px'}); 
@@ -51,10 +49,8 @@ class UserScript
 
   private inline function show_what_is( event:Event ):Event
   {
-    /*trace( event.target.getAttribute("id") );*/
-    
     var selector = event.target.getAttribute("id")+"_pop";
-    new JQuery("#"+selector).css({opacity:1, top:STARTING_POP_TOP});
+    new JQuery("#"+selector).css({opacity:1, display:'block', top:STARTING_POP_TOP});
     
     // close any that may not have closed on mouseleave
     var tmp:JQuery;
@@ -62,7 +58,7 @@ class UserScript
       if(obj.id != selector){
         tmp = new JQuery("#"+obj.id);
         if(Std.parseInt(tmp.css("opacity")) > 0){
-          tmp.stop().animate({opacity:0, top:(STARTING_POP_TOP+POP_ANIMATION_DIST)+"px"}, POP_OUT_SPEED);
+          tmp.stop().css({opacity:0, top:(STARTING_POP_TOP+POP_ANIMATION_DIST)+"px", display:'none'});
         }
       }
     });
@@ -73,7 +69,9 @@ class UserScript
   private inline function close_what_is( event:Event ):Event
   {
     var selector = "#"+event.target.getAttribute("id")+"_pop";
-    new JQuery(selector).stop().animate({opacity:0, top:(STARTING_POP_TOP+POP_ANIMATION_DIST)+"px"}, POP_OUT_SPEED);
+    new JQuery(selector).stop().animate({opacity:0, top:(STARTING_POP_TOP+POP_ANIMATION_DIST)+"px"}, POP_OUT_SPEED, function(){
+      new JQuery(selector).css('display', 'none');
+    });
     return event;
   }
   

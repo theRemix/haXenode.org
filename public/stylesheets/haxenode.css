@@ -691,6 +691,7 @@ div.what_is_pop{
 	position: absolute;
 	margin-left: 540px;
 	top: 760px;
+	display: none;
 }
 div.what_is_pop article{
 	width: 480px;
