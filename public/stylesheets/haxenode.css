@@ -50,6 +50,7 @@ ul li{
 }
 
 div#main{
+	padding-top: 163px; /* absolute #header-container */
 	border-bottom: 10px solid #ED822F;
 	-webkit-box-shadow:0 5px 80px 0px #111;
 	   -moz-box-shadow:0 5px 80px 0px #111;
@@ -60,10 +61,13 @@ div#main{
 #header-container{
 	background: url('/images/header.png') repeat-x;
 	height:163px;
+	width: 100%;
+	position: absolute;
 	
 	-webkit-box-shadow: 0px 5px 60px 0px #212121;
 	   -moz-box-shadow: 0px 5px 60px 0px #212121;
 	        box-shadow: 0px 5px 60px 0px #212121;
+	        
 }
 
 
@@ -75,6 +79,7 @@ h1#title{
 	background: url('/images/logo.png') no-repeat bottom;
 	margin-bottom: 14px;
 }
+
 
 header nav{
 	margin: auto;
@@ -114,6 +119,11 @@ div#main-content{
 	background: #676867;
 	padding-bottom: 45px;
 }
+
+div#main-content > div.wrapper > div{
+	padding-top: 10px;
+}
+
 
 div#haxenodexample{
 	
@@ -329,17 +339,17 @@ div#whyusehaxe ul li p{
 }
 
 
-div#installation{
+div#download{
 	
 }
-div#installation ul{
+div#download ul{
 	width: 227px;
 	float: left;
 }
-div#installation ul:last-childe{
+div#download ul:last-childe{
 	float: right;
 }
-div#installation h2{
+div#download h2{
 	margin-bottom: 20px;	
 }
 
@@ -359,12 +369,15 @@ div#installing-haxe ul{
 	
 }
 
-#installation div.box:last-child{
+#download div.box:last-child{
 	margin-top: 16px;
 }
 
+div#installation{
+	
+}
 
-div#installation-haxenode article.haxecode,
+div#installation article.haxecode,
 div.what_is_pop article{
 	background: #212326; /*#3A3A3C;*/
 	color: #DDD; /*#A7A9AC;*/
@@ -377,7 +390,7 @@ div.what_is_pop article{
 }
 
 
-div#installation-haxenode article.haxecode header,
+div#installation article.haxecode header,
 div.what_is_pop article header{
 	background: #666; /*#A7A9AC;*/
 	width: auto;
@@ -390,7 +403,7 @@ div.what_is_pop article header{
 	        border-radius: 0 10px 0 10px;
 }
 
-div#installation-haxenode article.haxecode header h2,
+div#installation article.haxecode header h2,
 div.what_is_pop article header h2{
 	color: #A7A9AC; /*#ED822F;*/ /*#333333;*/
 	height: 30px;

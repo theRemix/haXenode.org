@@ -230,6 +230,20 @@ UserScript = function(p) {
 	new $(function() {
 		me.what_is_list_item.mouseenter($closure(me,"show_what_is")).mouseleave($closure(me,"close_what_is"));
 	});
+	new $("nav a.scrollinglink").click(function(event) {
+		var destination = new $(event.currentTarget.hash).offset().top;
+		new $("html:not(:animated),body:not(:animated)").animate({ scrollTop : destination - 20},350,function() {
+			js.Lib.window.location.hash = event.currentTarget.hash;
+		});
+		event.preventDefault();
+		return false;
+	});
+	new $(js.Lib.window).scroll(function(event) {
+		var nav = new $("#header-container");
+		var scrolltop = event.currentTarget.scrollY;
+		var pos = nav.css("position");
+		if(scrolltop > 134 && nav.css("position") != "fixed") nav.css({ position : "fixed", top : "-" + 134 + "px"}); else if(scrolltop < 134 && nav.css("position") != "absolute") nav.css({ position : "absolute", top : "0px"});
+	});
 }
 UserScript.__name__ = ["UserScript"];
 UserScript.main = function() {
@@ -328,4 +342,6 @@ js.Lib.onerror = null;
 UserScript.POP_OUT_SPEED = 100;
 UserScript.STARTING_POP_TOP = 760;
 UserScript.POP_ANIMATION_DIST = 14;
+UserScript.NAV_SCROLL_SPEED = 350;
+UserScript.NAV_SCROLL_LIMIT = 134;
 UserScript.main()
