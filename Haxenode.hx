@@ -34,6 +34,10 @@ class Haxenode
     // Routes
 
     app.get('/', routes.index);
+    app.get('/whatishaxenode', routes.what);
+    app.get('/whyusehaxe', routes.why);
+    app.get('/download', routes.download);
+    app.get('/installation', routes.installation);
     
     app.listen(SERVER_LISTEN);
     

@@ -225,13 +225,14 @@ Std.prototype.__class__ = Std;
 UserScript = function(p) {
 	if( p === $_ ) return;
 	var me = this;
-	this.what_is_pop = new $(".what_is_pop").css({ opacity : 0});
-	this.what_is_list_item = new $("#whatishaxe-left ul li a");
-	new $(function() {
-		me.what_is_list_item.mouseenter($closure(me,"show_what_is")).mouseleave($closure(me,"close_what_is"));
-	});
 	new $("nav a.scrollinglink").click(function(event) {
-		var destination = new $(event.currentTarget.hash).offset().top;
+		var url = event.target.name;
+		var container = new $(event.currentTarget.hash);
+		if(container.html().length == 0) $.ajax(url,{ complete : function(xhr,status) {
+			container.html(xhr.responseText);
+			if(url == "/whatishaxenode") me.init_what_is_pops();
+		}});
+		var destination = container.offset().top;
 		new $("html:not(:animated),body:not(:animated)").animate({ scrollTop : destination - 20},350,function() {
 			js.Lib.window.location.hash = event.currentTarget.hash;
 		});
@@ -251,6 +252,14 @@ UserScript.main = function() {
 }
 UserScript.prototype.what_is_pop = null;
 UserScript.prototype.what_is_list_item = null;
+UserScript.prototype.init_what_is_pops = function() {
+	var me = this;
+	this.what_is_pop = new $(".what_is_pop").css({ opacity : 0});
+	this.what_is_list_item = new $("#whatishaxe-left ul li a");
+	new $(function() {
+		me.what_is_list_item.mouseenter($closure(me,"show_what_is")).mouseleave($closure(me,"close_what_is"));
+	});
+}
 UserScript.prototype.show_what_is = function(event) {
 	var selector = event.target.getAttribute("id") + "_pop";
 	new $("#" + selector).css({ opacity : 1, top : 760});

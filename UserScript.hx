@@ -14,21 +14,27 @@ class UserScript
 
   public inline function new()
   { 
-    // "what is x" pop up descriptions
-    what_is_pop = new JQuery(".what_is_pop").css({opacity:0});
-    what_is_list_item = new JQuery("#whatishaxe-left ul li a");
+    // init_what_is_pops(); // won't need this on load
     
-    new JQuery(function():Void{
-      what_is_list_item.mouseenter(show_what_is).mouseleave(close_what_is);
-    });
-    
-    
-    // scrollTo links
+    // ajax, then scrollTo links
     new JQuery("nav a.scrollinglink").click(function(event){
-      var destination = new JQuery(event.currentTarget.hash).offset().top;
+      var url = event.target.name; // path to load, "/whatishaxenode"
+      var container = new JQuery(event.currentTarget.hash); // attr(href) "#download"
+      if(container.html().length == 0){ // only load once
+        JQueryStatic.ajax(url, { 
+          complete: function(xhr:JqXHR, status:String){
+            container.html(xhr.responseText);
+            if(url == "/whatishaxenode") init_what_is_pops(); // run init method after loading this page
+          }
+        });
+      }
+      
+      // scroll to content container
+      var destination = container.offset().top;
       new JQuery("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination-20}, NAV_SCROLL_SPEED, function(){
         Lib.window.location.hash = event.currentTarget.hash;
       });
+      
       event.preventDefault();
       return false;
     });
@@ -48,7 +54,18 @@ class UserScript
       
     });
   }
-
+  
+  private function init_what_is_pops(  ):Void
+  {
+    // "what is x" pop up descriptions
+    what_is_pop = new JQuery(".what_is_pop").css({opacity:0});
+    what_is_list_item = new JQuery("#whatishaxe-left ul li a");
+    
+    new JQuery(function():Void{
+      what_is_list_item.mouseenter(show_what_is).mouseleave(close_what_is);
+    });
+  }
+  
   private inline function show_what_is( event:Event ):Event
   {
     /*trace( event.target.getAttribute("id") );*/

@@ -1,0 +1,35 @@
+article
+  header
+    h1 Install haXenode
+  
+article.haxecode
+  header
+    h2 Install nodejs with haxelib
+  .code
+    code.comment # Setup haxelib if you haven&#039;t done so already
+    br
+    kbd $ haxelib setup
+    br
+    samp
+      | Please enter haxelib repository path with write access
+      | Hit enter for default (/usr/lib/haxe/lib)
+      | Path : 
+    code.comment # [Return]
+    br
+    samp haxelib repository is now /usr/lib/haxe/lib/
+    br
+    br
+    code.comment # install nodejs using haxelib
+    br
+    kbd $ haxelib install nodejs
+    br
+    br
+    code.comment # (optional) check that nodejs was installed successfully
+    br
+    kbd $ haxelib list
+    br
+    samp
+      | ...
+      | nodejs: 0.6 
+      // [#{haxenode_version}]
+      | ...
