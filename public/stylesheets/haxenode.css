@@ -208,10 +208,10 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 body{
 	font-family: 'Cantarell', Helvetica, Helvetica Neue, Arial, sans-serif;
-	background: url('/images/dark_bg.png') #676867;
+	background: url('http://assets.haxenode.org/images/dark_bg.png') #676867;
 }
 div#container{
-	background: url('/images/light_bg.png');
+	background: url('http://assets.haxenode.org/images/light_bg.png');
 }
 
 a,a:visited{
@@ -264,7 +264,7 @@ div#main{
 }
 
 #header-container{
-	background: url('/images/header.png') repeat-x;
+	background: url('http://assets.haxenode.org/images/header.png') repeat-x;
 	height:163px;
 	width: 100%;
 	position: absolute;
@@ -281,7 +281,7 @@ h1#title{
 	height: 124px; /*99px;*/
 	margin: auto;
 	margin-top: 0px;
-	background: url('/images/logo.png') no-repeat bottom;
+	background: url('http://assets.haxenode.org/images/logo.png') no-repeat bottom;
 	margin-bottom: 14px;
 }
 
@@ -376,7 +376,7 @@ div#haxenodexample article header{
 	background: #666; /*#A7A9AC;*/
 	width: 120px;
 	float: right;
-	background: url('/images/box_bg.png');
+	background: url('http://assets.haxenode.org/images/box_bg.png');
 	
 	-webkit-border-radius: 0 10px 0 10px;
 	   -moz-border-radius: 0 10px 0 10px;
@@ -414,7 +414,7 @@ div#haxexample{
 
 
 div#main article header h1{
-	background: url('/images/h1.png') no-repeat left center;
+	background: url('http://assets.haxenode.org/images/h1.png') no-repeat left center;
 	height: 38px;
 	line-height: 38px;
 	text-indent: 30px;
@@ -427,7 +427,7 @@ div#main article header h1{
 }
 
 div.box, div#whyusehaxe ul li{
-	background: url('/images/box_bg.png');
+	background: url('http://assets.haxenode.org/images/box_bg.png');
 	padding: 30px;
 	color: #A7A9AC;
 	-webkit-border-radius: 10px;
@@ -601,7 +601,7 @@ div.what_is_pop article header{
 	width: auto;
 	padding: 0 20px;
 	float: right;
-	background: url('/images/box_bg.png');
+	background: url('http://assets.haxenode.org/images/box_bg.png');
 	
 	-webkit-border-radius: 0 10px 0 10px;
 	   -moz-border-radius: 0 10px 0 10px;
