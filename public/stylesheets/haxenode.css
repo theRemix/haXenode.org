@@ -1,5 +1,6 @@
 /* @override 
 	http://localhost:3117/stylesheets/haxenode.css
+	http://haxenode.org/stylesheets/haxenode.css
 	http://assets.haxenode.org/stylesheets/haxenode.css
 */
 
@@ -317,11 +318,12 @@ header nav ul li{
 
 nav a,nav a:visited{
 	padding: 0px 20px;
-	color:#3A3A3C;
+	color:#DDD; /*#ED822F*/
 	text-decoration:none;
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 12px;
+	letter-spacing: 1px;
 	border: 0px solid;
 }
 nav a:hover{
@@ -335,7 +337,7 @@ div.wrapper{
 }
 
 div#main-content{
-	background: #676867;
+	background: #656565; /*676867*/
 	padding-bottom: 45px;
 }
 
@@ -401,7 +403,7 @@ div#haxenodexample article header h2{
 	color: #A7A9AC; /*#ED822F;*/ /*#333333;*/
 	height: 30px;
 	line-height: 32px;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 13px;
@@ -421,6 +423,8 @@ div#nodejsexample, div#haxexample{
 
 div#nodejsexample{
 	float: left;
+	padding-right: 12px;
+	border-right: 1px solid #444;
 }
 div#haxexample{
 	float: right;
@@ -433,7 +437,7 @@ div#main article header h1{
 	line-height: 38px;
 	text-indent: 30px;
 	color: #A7A9AC;
-	font-weight: normal;
+	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 14px;
 	letter-spacing: 1px;
@@ -474,8 +478,8 @@ div.box h2{
 	color: #ED822F;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-size: 18px;
-	letter-spacing: 2px;
+	font-size: 21px;
+	letter-spacing: 1px;
 }
 
 div#whatishaxe-left, div#whatishaxe-right{
@@ -505,7 +509,7 @@ div#whatishaxe-right{
 div#whatishaxe-right span.plus{
 	margin-left: 0px;
 	margin-right: 8px;
-	font-size: 26px;
+	font-size: 29px;
 	line-height: 10px;
 }
 div#whatishaxe-right div.content-wrapper{
@@ -521,7 +525,7 @@ div#whyusehaxe article header h3{
 	margin-left: 31px;
 	margin-bottom: 30px;
 	font-size: 14px;
-	font-weight: normal;
+	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
@@ -542,9 +546,9 @@ div#whyusehaxe ul li.third-column{
 }
 div#whyusehaxe ul li h2{
 	color: #ED822F;
-	font-weight: normal;
+	font-weight: bold;
 	text-transform: uppercase;
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 22px;
 	letter-spacing: 1px;
 }
@@ -552,8 +556,9 @@ div#whyusehaxe ul li hr{
 	border-color: #1D1D1E;	
 }
 div#whyusehaxe ul li p{
+	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
 	font-weight: lighter;
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 20px;
 }
 
@@ -659,6 +664,8 @@ div#footer-container > footer > ul > li > ul > li{
 	font-weight: lighter;
 	font-size: 14px;
 	line-height: 20px;
+	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+	font-size: 13px;
 	
 }
 div#footer-container > footer > ul > li:last-child > ul > li{
@@ -667,9 +674,9 @@ div#footer-container > footer > ul > li:last-child > ul > li{
 
 div#footer-container > footer > ul > li > h3{
 	color: #ED822F;
-	font-weight: normal;
+	font-weight: bold;
 	text-transform: uppercase;
-	font-size: 15px;
+	font-size: 13px;
 	line-height: 22px;
 	letter-spacing: 1px;
 	margin-bottom: 14px;
@@ -680,6 +687,7 @@ div#footer-container > footer > ul > li > ul > li > a:visited{
 	color: #A7A9AC;
 	border: 0px solid;
 }
+
 div#footer-container > footer > ul > li > ul > li > a:hover{
 	color: #ED822F;
 	border-bottom: 1px dotted #A9ABAD;
@@ -764,4 +772,9 @@ div.what_is_pop article div.code ul li{
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3{ page-break-after: avoid; }
+}
+
+.code p{
+	font-family: Helvetica, Helvetica Neue, Arial, sans-serif;
+	font-size: 13px;
 }
