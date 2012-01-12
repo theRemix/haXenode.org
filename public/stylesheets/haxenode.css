@@ -1,4 +1,7 @@
-/* @override http://localhost:3117/stylesheets/haxenode.css */
+/* @override 
+	http://localhost:3117/stylesheets/haxenode.css
+	http://assets.haxenode.org/stylesheets/haxenode.css
+*/
 
 @import url(http://fonts.googleapis.com/css?family=Cantarell:400,700,400italic);
 
@@ -263,11 +266,22 @@ div#main{
 
 }
 
+div#forkme{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	z-index: 2;
+}
+div#forkme *{
+	border: 0px;
+}
+
 #header-container{
 	background: url('http://assets.haxenode.org/images/header.png') repeat-x;
 	height:163px;
 	width: 100%;
 	position: absolute;
+	z-index: 1;
 	
 	-webkit-box-shadow: 0px 5px 60px 0px #212121;
 	   -moz-box-shadow: 0px 5px 60px 0px #212121;
