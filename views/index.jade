@@ -111,7 +111,7 @@
             header
               h2 What is Strong Typing?
             .code
-              blockquote(cite="http://haxe.org/ref/type_advanced")
+              blockquote
                 p The haXe compiler uses static type checking at compile-time so you have a stronger guarantee of the application&#039;s behavior at run-time. HaXe uses several kinds of types.
               ul
                 li
@@ -202,7 +202,7 @@
             header
               h2 What is Inlining?
             .code
-              blockquote(cite="http://haxe.org/ref/inline")
+              blockquote
                 | The main advantage of using &ldquo;inline&rdquo; is that you can use as many variables as you want without slowing down your code with these variables accesses since the value is directly replaced in the compiled/generated code.
               code
                 span.comment \// Inlining Static Variables
@@ -215,7 +215,7 @@
                 |   }
                 | }
               br
-              blockquote(cite="http://haxe.org/ref/inline")
+              blockquote
                 | The principle is the same for a method. The less expensive function call is the one that is never done. In order to achieve that for small methods that are often called, you can &ldquo;inline&rdquo; the method body at the place the method is called.
               code
                 span.comment \// Inlining Methods
@@ -240,7 +240,7 @@
             header
               h2 What is an Interface?
             .code
-              blockquote(cite="http://en.wikipedia.org/wiki/Interface_(computing)#Software_interfaces_in_object_oriented_languages")
+              blockquote
                 p In object-oriented languages the term &ldquo;interface&rdquo; is often used to define an abstract type that contains no data, but exposes behaviors defined as methods. A class having all the methods corresponding to that interface is said to implement that interface. Furthermore, a class can implement multiple interfaces, and hence can be of different types at the same time.
                 p An interface is hence a type definition; anywhere an object can be exchanged (in a function or method call) the type of the object to be exchanged can be defined in terms of an interface instead of a specific class. This allows later code to use the same function exchanging different object types; hence such code turns out to be more generic and reusable.
                 p.comment cite: http://en.wikipedia.org/wiki/Interface_(computing)
@@ -250,7 +250,7 @@
             header
               h2 What is Type Inference?
             .code
-              blockquote(cite="http://haxe.org/ref/type_infer")
+              blockquote
                 p Type Inference means that the type information is not only checked in the program, it&#039;s also carried when typing, so it doesn&#039;t have to be resolved immediately. For example a local variable can be declared without any type (it will have the type Unknown) and when first used, its type will be set to the corresponding one.
                 p Type Inference enables the whole program to be strictly typed without any need to put types everywhere. In particular, local variables do not need to be typed, their types will be inferred when they are first accessed for reading or writing
             
@@ -265,7 +265,7 @@
             header
               h2 What are Generics?
             .code
-              blockquote(cite="http://haxe.org/ref/type_params")
+              blockquote
                 p A class can have several type parameters that can be used to get extensible behavior.
                 p You can define your own parameterized classes with several type parameters for your own usage when you need it.
               code
@@ -314,7 +314,7 @@
             header
               h2 What is a Package?
             .code
-              blockquote(cite="http://haxe.org/ref/packages")
+              blockquote
                 p Packages are used to organize and contain classes in namespaces to prevent collisions and group functionally similar files together.
               p
                 | the class 
@@ -333,7 +333,7 @@
             header
               h2 What is a Class?
             .code
-              blockquote(cite="http://en.wikipedia.org/wiki/Class_(computer_programming)")
+              blockquote
                 p In object-oriented programming, a class is a construct that is used as a blueprint to create instances of itself – referred to as class instances, class objects, instance objects or simply objects. A class defines constituent members which enable these class instances to have state and behavior. Data field members (member variables or instance variables) enable a class object to maintain state. Other kinds of members, especially methods, enable a class object&#039;s behavior. Class instances are of the type of the associated class.
                 p.comment cite: http://en.wikipedia.org/wiki/Class_(computer_programming)
                 
@@ -342,7 +342,7 @@
             header
               h2 What is a Macro?
             .code
-              blockquote(cite="http://haxe.org/manual/macros")
+              blockquote
                 p Some languages features such as C #define enable the user to define syntax shortcuts. They are useful to perform some pseudo-code-generation, but at the same time allow to modify the syntax of the language, making the code unreadable for other developers.
                 p The haXe macro system allows powerful compile-time code-generation without modifying the haXe syntax.
                 p Macros are defined with the <code class="code">@:macro</code> Metadata
@@ -364,7 +364,7 @@
                 |   static function main(){
                 |     var now = MyMacro.getDate(); <span class="comment">// String is inferred</span>
                 |     trace(now);
-                |     <span class="comment">// print the Date and time this file was <strong>compiled.</strong>
+                |     <span class="comment">// print the Date and time this file was <strong>compiled.</strong></span>
                 |   }
                 | }
               blockquote
@@ -376,7 +376,7 @@
             header
               h2 What is an Enum?
             .code
-              blockquote(cite="http://haxe.org/ref/enums")
+              blockquote
                 p Enums are different to classes and are declared with a finite number of constructors.
                 p When you want to ensure that only a fixed number of values are used then enums are the best thing since they guarantee that other values cannot be constructed.
               code
@@ -401,14 +401,14 @@
             header
               h2 What is an Iterator?
             .code
-              blockquote(cite="http://haxe.org/ref/iterators")
+              blockquote
                 p An iterator is an object which follows the Iterator typedef (The type T is the iterated type) :
               code
                 | typedef Iterator&lt;T&gt; = {
                 |   function hasNext() : Bool;
                 |   function next() : T;
                 | }
-              blockquote(cite="http://haxe.org/ref/iterators")
+              blockquote
                 p You can use the for syntax in order to execute iterators. The simplest iterator is the IntIter iterator which can easily be built using the operator ... (three dots). For example this will list all numbers from 0 to 9 :
               code
                 | for( i in 0...10 ) {
@@ -432,7 +432,7 @@
             header
               h2 What is Conditional Compiling?
             .code
-              blockquote(cite="http://haxe.org/ref/conditionals")
+              blockquote
                 p Sometimes you might want to have a single library using specific API depending on the platform it is compiled on. At some other time, you might want to do some optimizations only if you turn a flag ON. For all that, you can use conditional compilation macros (AKA preprocessor macros)
                 p If the following example was compiled with <code class="code">-js out.js -D nodejs</code><br/>then starting the compiled javascript file with the node command will echo &ldquo;hello javascript!&rdquo; and &ldquo;hello node.js!&rdquo; to the console.
               code
