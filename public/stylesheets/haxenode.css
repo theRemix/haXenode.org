@@ -2,7 +2,7 @@
 
 
 body{
-	font-family:Helvetica, Helvetica Neue, Arial, sans-serif;
+	font-family: 'Cantarell', Helvetica, Helvetica Neue, Arial, sans-serif;
 	background: url('/images/dark_bg.png') #676867;
 }
 div#container{
@@ -88,7 +88,7 @@ header nav{
 
 header nav ul{
 	margin: auto;
-	width: 850px;
+	width: 911px;
 	padding-top: 4px;
 }
 
