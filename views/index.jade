@@ -203,7 +203,7 @@
               h2 What is Inlining?
             .code
               blockquote
-                | The main advantage of using &ldquo;inline&rdquo; is that you can use as many variables as you want without slowing down your code with these variables accesses since the value is directly replaced in the compiled/generated code.
+                p The main advantage of using &ldquo;inline&rdquo; is that you can use as many variables as you want without slowing down your code with these variables accesses since the value is directly replaced in the compiled/generated code.
               code
                 span.comment \// Inlining Static Variables
                 br
@@ -216,7 +216,7 @@
                 | }
               br
               blockquote
-                | The principle is the same for a method. The less expensive function call is the one that is never done. In order to achieve that for small methods that are often called, you can &ldquo;inline&rdquo; the method body at the place the method is called.
+                p The principle is the same for a method. The less expensive function call is the one that is never done. In order to achieve that for small methods that are often called, you can &ldquo;inline&rdquo; the method body at the place the method is called.
               code
                 span.comment \// Inlining Methods
                 br
